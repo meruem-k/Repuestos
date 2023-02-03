@@ -23,6 +23,7 @@ app.config['MYSQL_DATABASE_USER']='b72abba5681628'
 app.config['MYSQL_DATABASE_PASSWORD']='ee391464'
 app.config['MYSQL_DATABASE_DB']='heroku_323cf7babebbf2c'
 app.config['MYSQL_CURSORCLASS']=''
+PORT = 5000
 mysql.init_app(app)
 
 
@@ -495,5 +496,5 @@ if __name__== '__main__':
     app.secret_key='KADJWumeisOSD##!#&'
  
 
-    app.run(debug=True)
+    app.run(debug=False)
 
