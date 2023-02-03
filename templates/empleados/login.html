@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Inicio</title>
+</head>
+
+
+
+    
+        <div class="row justify-content-center">
+
+
+         
+         <fieldset  style="align-items: center; background-color:#6f1d68; padding: 20px; height:2000px; ">
+          <br>
+          <form method="post" action="/login" enctype="multipart/form-data" >
+           <div style="vertical-align:center">
+            <h1 style="color:rgb(255, 255, 255); text-align: center ;text-align: center;">LOGIN</h1>
+            <h2 style="text-align: center; color:white">
+              <br>
+
+              USUARIO
+              <br>
+              <br>
+              <input type="text" name="txtUser" id="txtUser">
+            <h2 style="text-align: center; color:white">
+              <br>
+              PASSWORD
+
+              <br>
+              <br>
+              <input type="password" name="txtPass" id="txtPass">
+              <br>
+              <br>
+              {%with messages = get_flashed_messages() %}
+              {%if messages%}
+                {%for message in messages%}
+                      <p style="color:red">{{message}}</p>
+                {%endfor%}
+              {% endif %}
+            {% endwith %}
+              
+              <input type="submit" value="Finalizar">
+            </h2>
+           </div>
+
+            </fieldset>
+
+          </div> 
+
+
+      </body>
+</html> 
+
+
+
+      
+      

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Inicio</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #6f1d68;">
+    <a class="navbar-brand" href="home"  style="color:white">Repuestos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" href="create" style="color:white">Agregar Repuesto  <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="view" style="color:white">Buscar Repuestos  <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registroventa" style="color:white">Registro de Ventas  <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <a class="nav-link" href="sell" style="color:white">Carrito  <span class="sr-only">(current)</span> </a> 
+    </div>
+  </nav>  
+  <br>
+  <br>
+  <br>
+  <div class="row justify-content-center">
+
+    <form method="post" action="/store" enctype="multipart/form-data" >
+      <p style="color: blue;">Nuevo Repuesto</p>
+      <h6>Nombre Repuesto</h6>
+        <input type="text" name="txtREPUESTO" id="txtREPUESTO">
+        <br>
+      <h6>Marca</h6>
+        <input type="text" name="txtMARCA" id="txtMARCA">
+        <br>
+      <h6>Modelo</h6>
+        <input type="list" name="txtMODELO" id="txtMODELO">
+        <br>
+      <h6>Año</h6>
+        <input type="text" name="txtANIO" id="txtANIO">
+        <br>
+      <h6>Ubicación</h6>
+        <input type="text" name="txtUBICACION" id="txtUBICACION">        
+      <br>
+      <h6>Precio</h6>
+        <input type="text" name="txtPrecio" id="txtANIO">
+        <br>     
+      <h6>Codigo de Barras</h6> 
+        <input type="text" name="txtCODIGO" id="txtCODIGO">
+        <br>
+        <br>
+      <h6>Foto</h6> 
+        <input type="file" name="txtFoto" id="txtFoto">
+        <br>
+        <br>
+        <input type="submit" value="Finalizar">
+      </div>
+    </form>
+</body>
+</html>

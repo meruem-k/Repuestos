@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>Inicio</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #6f1d68;">
+    <a class="navbar-brand" href="home"  style="color:white">Repuestos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" href="create" id="agregar"  style="color:white">Agregar Repuesto  <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="view" style="color:white">Buscar Repuestos  <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registroventa" style="color:white">Registro de Ventas  <span class="sr-only">(current)</span></a>
+        </li>
+        <br>
+      </ul>
+        <a class="nav-item" href="sell" style="color:white">Carrito  <span class="sr-only">(current)</span> </a>  
+    </div>
+    
+  </nav>  
+
+    <table class="table table-light">
+        <thead class="thead-light">
+          <tr><form method="post" action="/store10" enctype="multipart/form-data">
+            <th><input type="text" style= "width:160px" name="txtNombreRepuesto" id ="txtNombreRepuesto" value="NOMBRE REPUESTO"></th>
+            <th><input type="text" name="txtMarca" id="txtMarca" value="MARCA"></th>
+            <th><input type="text" style= "width:150px" name="txtModelo" id ="txtModelo" value="MODELO"></th>
+            <th><input type="text" style= "width:50px" name="txtANIO" id="txtANIO" value="AÑO"></th>
+            <th>UBICACIÓN</th>
+            <th>PRECIO</th> 
+            <th>FOTO</th>
+            <th><input type="text" style= "width:100px" name="txtCodigo" id="txtCodigo" value="CODIGO"></th>
+            
+            <th><input type ="submit" value="FILTRAR" name="btnFiltrar" id="btnFiltrar">
+            </form>
+        </tr> 
+            
+        </thead>
+        <tbody>
+                    
+            {% for repuesto in datos %}
+            <tr>
+                <td>{{repuesto[0]}}</td>
+                <td>{{repuesto[1]}}</td>
+                <td>{{repuesto[2]}}</td>
+                <td>{{repuesto[3]}}</td>
+                <td>{{repuesto[4]}}</td>
+                <td>{{repuesto[5]}}</td>
+                <td>
+                  <img class="img-thumbnail" width="70%" src="uploads/{{repuesto[7]}}" alt="">
+                </td>
+                <td>{{repuesto[6]}}</td>
+                <td>
+                <a href="/edit/{{repuesto[6]}}">Editar</a> | 
+                <a style="color:rgb(176, 39, 39) ;" href="/eliminar/{{repuesto[6]}}">Eliminar</a> |
+                <a style="color:blue;" href="/agregar/{{repuesto[6]}}">Agregar al carrito</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
